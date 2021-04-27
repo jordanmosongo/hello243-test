@@ -53,7 +53,7 @@ class Home extends React.Component {
           <input
             type="text"
             name="inputSearch"
-            placeholder="Rechercher un robot"
+            placeholder="Recherchez un robot"
             onChange={this.searchRobot}
           />
         </div>
