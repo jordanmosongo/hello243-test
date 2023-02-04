@@ -1,70 +1,46 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aperçu
+Pour compléter cette évaluation, vous devrez écrire une simple application Web React et nous fournir les fichiers sources à construire.
 
-## Available Scripts
+Le but de cette évaluation est d'évaluer vos compétences et votre approche pour composer une application Web simple à partir d' un flux d'API. Nous évaluerons également la sortie HTML, CSS et JS générée.
 
-In the project directory, you can run:
+Cette évaluation devrait prendre environ 1 à 2 heures.
 
-### `npm start`
+Ce qu'il faut faire?
+Votre objectif est de mettre en œuvre une application React simple, où les utilisateurs pourront voir les réponses vidéo d'un candidat, commenter les réponses et enregistrer les données. L'UX/UI dépend entièrement de vous.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Bien qu'il s'agisse d'un exercice très basique, nous rechercherons un code simple, bien conçu, bien commenté et testé dans la soumission.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Veuillez inclure un README avec les instructions de configuration et toute autre documentation que vous avez créée dans le cadre de votre solution.
 
-### `npm test`
+Ajoutez également des informations très courtes pour les éléments suivants à votreREADME :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Comment avez-vous décidé des technologies à utiliser dans le cadre de votre solution ?
+Y a-t-il des améliorations que vous pourriez apporter à votre soumission ?
+Que feriez-vous différemment si vous disposiez de plus de temps ?
+Une fois l'implémentation terminée, veuillez nous envoyer le lien vers le référentiel hébergé (par exemple, Github, Bitbucket...). Alternativement, vous pouvez également soumettre votre code sous forme de fichier ZIP.
 
-### `npm run build`
+Comment l'application doit-elle fonctionner ?
+L'utilisateur de cette application de réaction devrait pouvoir voir la ou les réponses vidéo des candidats à un emploi postulant pour un emploi dans leur entreprise. L'application doit avoir le flux de travail suivant,
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Choisissez un candidat dans une liste.
+En fonction de la sélection à la première étape, si le candidat sélectionné a une candidature, affichez la ou les réponses vidéo du candidat avec la question pertinente affichée en texte. Si le candidat sélectionné n'a pas de candidature, affichez le message approprié.
+Pour chaque réponse vidéo d'un candidat, offrez une option pour saisir des commentaires.
+Fournissez un bouton "Enregistrer" qui enregistre les commentaires dans le fichier api.json.
+Exigences
+Seule l'étape 1 doit être visible lorsqu'aucun candidat n'est sélectionné. Les étapes 1, 2, 3 et 4 doivent être visibles lorsqu'un candidat est sélectionné.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+L'utilisateur doit pouvoir modifier la sélection des candidats à tout moment.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Vous pouvez utiliser les bibliothèques, les exécuteurs de tâches et les processus de construction que vous aimez. React et JavaScript simple sont les seules exigences (ES6 encouragé, mais pas de TypeScript, CoffeeScript, etc.). Redux est fortement encouragé si vous en voyez le besoin.
 
-### `npm run eject`
+Utilisation de l'API
+L'API peut être lancée à l'aide de npm start. Vous devrez exécuter npm install une fois que vous aurez commencé à travailler sur le projet pour installer les dépendances.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Point final	Résultat
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+/candidates	Répertorie tous les candidats disponibles
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+/questions	Répertorie toutes les questions disponibles
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+/applications	Répertorie toutes les applications disponibles

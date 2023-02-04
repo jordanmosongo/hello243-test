@@ -1,70 +1,67 @@
 import React from "react";
-import Robot from "./components/Robot";
-import Loader from "./components/Loader";
+import Candidate from "./components/Candidate";
+import candidatesData from "./api.json";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrayOfRobots: [],
-      filteredRobotsArray: [],
+      arrayOfCandidates: [],
+      filteredCandidatesArray: [],
       loading: true,
     };
   }
 
   componentDidMount() {
-    (async () => {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      const responseData = await response.json();
-      if (response.ok) {
-        this.setState({
-          arrayOfRobots: responseData,
-          filteredRobotsArray: responseData,
+    const candidates = candidatesData.candidates;
+    this.setState({
+          arrayOfCandidates: candidates,
+          filteredCandidatesArray: candidates,
           loading: false,
         });
-      } else {
-        this.setState({
-          loading: true,
-        });
-      }
-    })();
-  }
-  searchRobot = (event) => {
+   }
+  searchCandidate = (event) => {
     event.preventDefault();
     let entry = event.target.value;
     const exp = new RegExp(entry, "i");
-    const tempArray = [...this.state.arrayOfRobots];
-    const filteredArray = tempArray.filter((robot) => {
-      const { name } = robot;
-      if (exp.test(name)) return robot;
+    const tempArray = [...this.state.arrayOfCandidates];
+    const filteredArray = tempArray.filter((candidate) => {
+      const { name } = candidate;
+      if (exp.test(name)) return candidate;
     });
     this.setState({
-      filteredRobotsArray: filteredArray,
+      filteredCandidatesArray: filteredArray,
     });
   };
 
   render() {
     return (
       <div className="home">
-        <h1>Mes amis robots</h1>
+        <h1>LISTE DES CANDIDATS</h1>
         <div className="home__input-search">
           <input
             type="text"
             name="inputSearch"
-            placeholder="Recherchez un robot"
-            onChange={this.searchRobot}
+            placeholder="Recherchez un candidat"
+            onChange={this.searchCandidate}
           />
         </div>
-        <div className="home__robots-container">
-          {this.state.loading ? (
-            <Loader />
-          ) : (
-            this.state.filteredRobotsArray.map((robot) => (
-              <Robot robot={robot} />
+        <div className="home__Candidates-container"
+        style={{
+          "width": '95%',
+          "height": '100%',
+          "display": "flex",
+          "flexDirection": "row",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "flexWrap": "wrap"
+        }}
+        >
+          {
+            this.state.filteredCandidatesArray.map((candidate) => (
+              <Candidate candidate={candidate} />
             ))
-          )}
+          }
         </div>
       </div>
     );
