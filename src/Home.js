@@ -14,12 +14,14 @@ class Home extends React.Component {
 
   componentDidMount() {
     const candidates = candidatesData.candidates;
+    console.log(candidates);
     this.setState({
           arrayOfCandidates: candidates,
           filteredCandidatesArray: candidates,
           loading: false,
         });
    }
+   
   searchCandidate = (event) => {
     event.preventDefault();
     let entry = event.target.value;
